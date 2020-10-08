@@ -1,12 +1,11 @@
 FROM node:12-slim
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/frontend
+COPY / /usr/src/frontend/
 
-COPY / ./
-RUN npm install
-RUN npm run build:css
-RUN npm run build:sapper
+RUN npm install && \
+    npm run build:css && \
+    npm run build:sapper
 
 EXPOSE 3000
-
 CMD [ "npm", "start" ]
