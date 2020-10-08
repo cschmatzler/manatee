@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
 
 WORKDIR /usr/src/backend
-COPY / /usr/src/backend/
+COPY /backend/ /usr/src/backend/
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
