@@ -6,6 +6,8 @@ services:
     deploy_on_push: false
     repo: cschmatzler/manatee
   name: backend
+  routes:
+    - path: /api
 - dockerfile_path: frontend/Dockerfile
   github:
     branch: master

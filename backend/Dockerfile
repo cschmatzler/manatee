@@ -7,15 +7,15 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV POETRY_VIRTUALENVS_CREATE false
 
-ENV MANATEE_ENV production
-
 RUN apk add --no-cache postgresql-libs
 RUN apk add --no-cache --virtual .build-deps g++ gcc libffi-dev make musl-dev postgresql-dev
 
-RUN pip install --upgrade pip
-RUN pip install poetry
-RUN poetry install
+RUN pip install --upgrade pip && \
+    pip install poetry && \
+    poetry install
 
 RUN apk --purge del .build-deps
 
-CMD [ "uvicorn", "manatee.main:app", "--host", "0.0.0.0", "--port", "20000" ]
+ENV MANATEE_ENV production
+EXPOSE 8080
+CMD [ "uvicorn", "manatee.main:app", "--host", "0.0.0.0", "--port", "8080" ]
