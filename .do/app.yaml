@@ -1,0 +1,14 @@
+name: manatee
+services:
+- dockerfile_path: backend/Dockerfile
+  github:
+    branch: master
+    deploy_on_push: false
+    repo: cschmatzler/manatee
+  name: backend
+- dockerfile_path: frontend/Dockerfile
+  github:
+    branch: master
+    deploy_on_push: false
+    repo: cschmatzler/manatee
+  name: frontend
