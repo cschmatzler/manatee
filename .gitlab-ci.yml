@@ -1,12 +1,4 @@
-image: python:3.8
-
-before_script:
-  - python -V
-  - pip install poetry
-  - poetry -V
-  - poetry install
-  - poetry shell
-
-test:
+test_python:
+  image: python:3.8
   script:
-    - poetry run pytest
+    - python -V
