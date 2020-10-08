@@ -1,16 +1,23 @@
 name: manatee
+region: fra
 services:
-- dockerfile_path: backend/Dockerfile
-  github:
-    branch: master
-    deploy_on_push: false
-    repo: cschmatzler/manatee
-  name: backend
-  routes:
-    - path: /api
-- dockerfile_path: frontend/Dockerfile
-  github:
-    branch: master
-    deploy_on_push: false
-    repo: cschmatzler/manatee
-  name: frontend
+  - dockerfile_path: frontend/Dockerfile
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    github:
+      branch: master
+      deploy_on_push: false
+      repo: cschmatzler/manatee
+    name: frontend
+    routes:
+      - path: /
+  - dockerfile_path: backend/Dockerfile
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    github:
+      branch: master
+      deploy_on_push: false
+      repo: cschmatzler/manatee
+    name: backend
+    routes:
+      - path: /api
