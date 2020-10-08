@@ -1,7 +1,7 @@
 FROM node:12-slim
 
 WORKDIR /usr/src/frontend
-COPY /frontend/ /usr/src/frontend/
+COPY . /usr/src/frontend/
 
 RUN npm install && \
     npm run build:css && \
