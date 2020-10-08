@@ -1,4 +1,8 @@
-test_python:
+test_backend:
   image: python:3.8
   script:
+    - cd backend
     - python -V
+    - pip3 install poetry
+    - poetry -V
+    - poetry install
