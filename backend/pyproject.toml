@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "manatee"
+version = "0.1.0"
+description = ""
+authors = ["Christoph Schmatzler <christoph@schmatzler.name>"]
+
+[tool.poetry.dependencies]
+# Python
+python = "^3.8"
+# Models
+pydantic = "^1.6.1"
+# Web
+uvicorn = "^0.12.1"
+fastapi = "^0.61.1"
+# Settings
+python-dotenv = "^0.14.0"
+# Database
+pony = "^0.7.13"
+psycopg2 = "^2.8.6"
+# Serialization
+ujson = "^3.1.0"
+# Cryptography
+passlib = "^1.7.3"
+argon2_cffi = "^20.1.0"
+python-jose = "^3.2.0"
+cryptography = "^3.1.1"
+
+[tool.poetry.dev-dependencies]
+# Testing
+pytest = "^5.2"
+pytest-cov = "^2.10.1"
+pytest-mock = "^3.3.1"
+freezegun = "^1.0.0"
+
+[tool.poetry.scripts]
+server = "manatee.main:start"

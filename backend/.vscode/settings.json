@@ -1,0 +1,13 @@
+{
+    "nixEnvSelector.nixShellConfig": "${workspaceRoot}/shell.nix",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/nix/store/cixdcbjwgpkyws0g6aqwc5h1m1mscqlq-python3.8-flake8-3.7.9/bin/flake8",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/nix/store/hh611z0yswjl217bxdpfn58lj3kjrrp4-python3.7-black-19.10b0/bin/black",
+    "python.pythonPath": "/home/christoph/.cache/pypoetry/virtualenvs/manatee-4vtpUrSe-py3.8/bin/python",
+    "autoDocstring.docstringFormat": "numpy"
+}

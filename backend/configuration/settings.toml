@@ -1,0 +1,33 @@
+[default]
+api_prefix = "/api"
+
+
+[test]
+database_provider = "sqlite"
+database_filename = ":memory:"
+
+argon2_memory_cost = 256
+argon2_time_cost = 2
+
+jwt_algorithm = "HS256"
+jwt_secret = "test_jwt_secret"
+
+[development]
+api_host = "127.0.0.1"
+api_port = 3000
+
+database_provider = "sqlite"
+database_filename = "../dev.sqlite"
+
+argon2_memory_cost = 512
+argon2_time_cost = 4
+
+jwt_algorithm = "HS256"
+jwt_secret = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+
+[production]
+api_host = "0.0.0.0"
+api_port = 8080
+
+argon2_memory_cost = 512000
+argon2_time_cost = 32
